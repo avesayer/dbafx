@@ -1,41 +1,29 @@
 package com.msokolov.model;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-
 public class Table {
 	
-	private SimpleStringProperty name = new SimpleStringProperty("");
-	private SimpleStringProperty description = new SimpleStringProperty("");
+	private String name;
+	private String description;
 
 	public Table() {
-		this("", "");
 	}
 
 	public Table(String name, String description) {
-		this.name.set(name);
-		this.description.set(description);
+		this.name = name;
+		this.description = description;
 	}
 
 	public String getName() {
-		return name.get();
+		return name;
 	}
 
 	public void setName(String name) {
-		this.name.set(name);
+		this.name = name;
 	}
 	public String getDescription() {
-		return description.get();
+		return description;
 	}
 	public void setDescription(String description) {
-		this.description.set(description);
+		this.description = description;
 	}
-
-	public StringProperty nameProperty() {
-        return name;
-    }
-
-	public StringProperty descriptionProperty() {
-        return description;
-    }
 }

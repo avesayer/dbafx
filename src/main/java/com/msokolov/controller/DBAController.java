@@ -21,9 +21,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class DBAController implements Initializable {
-
-	private ObservableList<Table> tableData = FXCollections.observableArrayList();
+public class DBAController {
 
 	@FXML
 	private TextField tableSearchField;
@@ -40,19 +38,19 @@ public class DBAController implements Initializable {
 	@FXML
 	private TableColumn<Table, String> tableColumnDesc;
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	@FXML
+	public void initialize() {
 		System.out.println("DBAController.initialize");
 
 		tableColumnName.setCellValueFactory(new PropertyValueFactory<Table, String>("name"));
         tableColumnDesc.setCellValueFactory(new PropertyValueFactory<Table, String>("description"));
 
-		tableData.add(new Table("ACN", "This is ACN"));
-		tblView.setItems(tableData);
+		List<Table> list = new ArrayList<>();
+		list.add(new Table("ACN", "This is ACN"));
+		list.add(new Table("DEP", "This is DEP"));
+		list.add(new Table("LN", "This is LN"));
 
-		ObservableList<Table> view = tblView.getItems();
-		view.forEach(e -> System.out.println(e.getName() + " " + e.getDescription()));
-
+		tblView.getItems().setAll(list);
 	}
 
 	public void updateAllAction() {

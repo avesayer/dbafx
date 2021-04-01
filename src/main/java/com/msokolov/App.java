@@ -17,6 +17,7 @@ public class App extends Application
 
         Parent root = FXMLLoader.load(getClass().getResource("/dba.fxml"));
         primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 }
