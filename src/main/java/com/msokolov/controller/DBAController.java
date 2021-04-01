@@ -43,7 +43,7 @@ public class DBAController {
 		System.out.println("DBAController.initialize");
 
 		tableColumnName.setCellValueFactory(new PropertyValueFactory<Table, String>("name"));
-        tableColumnDesc.setCellValueFactory(new PropertyValueFactory<Table, String>("description"));
+		tableColumnDesc.setCellValueFactory(new PropertyValueFactory<Table, String>("description"));
 
 		List<Table> list = new ArrayList<>();
 		list.add(new Table("ACN", "This is ACN"));
@@ -64,18 +64,19 @@ public class DBAController {
 		System.out.println("settingsAction");
 
 		Stage stage = new Stage();
-        stage.initModality(Modality.WINDOW_MODAL);
-        stage.initOwner(tableSearchField.getScene().getWindow());
+		stage.initModality(Modality.WINDOW_MODAL);
+		stage.initOwner(tableSearchField.getScene().getWindow());
 
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/settings.fxml")));
-        stage.setScene(scene);
-        stage.show();
+		Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/settings.fxml")));
+		stage.setScene(scene);
+		stage.show();
 	}
 
 	public void updateEnvironmentAction() {
 		System.out.println("updateEnvironmentAction");
-		
+
 	}
+
 	public void updateTableAction() {
 		System.out.println("updateTableAction");
 	}
