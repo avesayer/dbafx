@@ -14,6 +14,8 @@ import javafx.stage.Window;
 
 public class FileController {
 
+	private MainController mainController;
+
 	@FXML private TableView<Record> fileView;
 	@FXML private TableColumn<Record, String> fileNameColumn;
 	@FXML private TableColumn<Record, String> fileDescColumn;
@@ -26,8 +28,6 @@ public class FileController {
 	@FXML private TextField fieldSearch;
 	private ObservableList<Record> fieldData = FXCollections.observableArrayList();
 
-	private MainController mainController;
-	
 	public void injectMainController(MainController mainController) {
 		this.mainController = mainController;
 	}
@@ -39,13 +39,7 @@ public class FileController {
 	public void initialize() {
 		System.out.println("FileController.initialize");
 
-		fileData.add(new Record("ACN", "This is ACN"));
-		fileData.add(new Record("DEP", "This is DEP"));
-		fileData.add(new Record("LN", "This is LN"));
-
-		fieldData.add(new Record("ACN", "This is ACN"));
-		fieldData.add(new Record("DEP", "This is DEP"));
-		fieldData.add(new Record("LN", "This is LN"));
+		insertData();
 
 		initializeTableView(fileView, fileNameColumn, fileDescColumn, fileData, fileSearch);
 		initializeTableView(fieldView, fieldNameColumn, fieldDescColumn, fieldData, fieldSearch);
@@ -81,6 +75,8 @@ public class FileController {
 			});
 		});
 
+		// tableView.setStyle("-fx-focus-color: transparent; -fx-font-size:14px;");
+
 		SortedList<Record> sortedData = new SortedList<>(filteredList);
 
 		// 4. Bind the SortedList comparator to the TableView comparator.
@@ -88,5 +84,32 @@ public class FileController {
 
 		// 5. Add sorted (and filtered) data to the table.
 		tableView.setItems(sortedData);
+	}
+
+	private void insertData() {
+		
+		fileData.add(new Record("ABPJNL", "Activate for Bill Pay Journal"));
+		fileData.add(new Record("ACCTBENDTL", "Account Beneficiary Details"));
+		fileData.add(new Record("ACCTTOEVENTS", "Account to Events"));
+		fileData.add(new Record("ACH", "ACH Batch Information"));
+		fileData.add(new Record("ACH1", "ACH Batch Description"));
+		fileData.add(new Record("ACH2", "ACH Detail Information"));
+		fileData.add(new Record("ACH2HIS", "ACH Detail History"));
+		fileData.add(new Record("ACH2HISD", "ACH Detail History - Data Items"));
+		fileData.add(new Record("ACHBCH", "ACH File Batch Header/Trailer"));
+		fileData.add(new Record("ACHDTL", "ACH Detail Record"));
+		fileData.add(new Record("ACHF", "Extract Recs for Outgoing Clearing Items"));
+		fileData.add(new Record("ACHFIL", "ACH File Header & Trailer"));
+		fileData.add(new Record("ACHINCB", "ACH Inclearing Batch Info"));
+		fileData.add(new Record("ACHINCD", "ACH Inclearing Detail Info"));
+		fileData.add(new Record("ACHINCDA", "ACH Addenda Information"));
+		fileData.add(new Record("ACHINCF", "ACH Inclearing File Header"));
+		fileData.add(new Record("ACHINCTMP", "ACH Inclearing Rpt - System Use"));
+		fileData.add(new Record("ACHORIG", "Extract file count for ACH origination"));
+		fileData.add(new Record("ACN", "Account file"));
+
+		fieldData.add(new Record("ACN", "This is ACN"));
+		fieldData.add(new Record("DEP", "This is DEP"));
+		fieldData.add(new Record("LN", "This is LN"));
 	}
 }

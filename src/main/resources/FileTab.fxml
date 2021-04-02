@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:id="fileTab" prefHeight="700.0" prefWidth="1140.0" 
-	  xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" 
-	  fx:controller="com.msokolov.controller.FileController">
+<VBox fx:id="fileTab" prefHeight="700.0" prefWidth="1140.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.msokolov.controller.FileController">
 	<children>
 		<GridPane prefHeight="41.0" prefWidth="1140.0">
 			<columnConstraints>
@@ -23,7 +27,7 @@
 				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
 			</rowConstraints>
 			<children>
-				<TextField fx:id="fileSearch" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="130.0" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+				<TextField fx:id="fileSearch" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="120.0" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
 					<GridPane.margin>
                   <Insets left="5.0" />
 					</GridPane.margin>
@@ -35,7 +39,7 @@
 				</TextField>
 			</children>
 		</GridPane>
-		<GridPane focusTraversable="true" gridLinesVisible="true" scaleShape="false" VBox.vgrow="ALWAYS">
+		<GridPane focusTraversable="true" scaleShape="false" VBox.vgrow="ALWAYS">
 			<columnConstraints>
 				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -45,7 +49,7 @@
 				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
 			</rowConstraints>
 			<children>
-				<TableView fx:id="fileView" GridPane.hgrow="ALWAYS">
+				<TableView fx:id="fileView" style="-fx-focus-color: transparent; -fx-font-size: 12; -fx-font-family: Courier New;" GridPane.hgrow="ALWAYS">
 					<columns>
 						<TableColumn fx:id="fileNameColumn" editable="false" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="200.0" resizable="false" text="Name" />
 						<TableColumn fx:id="fileDescColumn" editable="false" maxWidth="1.7976931348623157E308" prefWidth="370.0" resizable="false" text="Description" />
@@ -65,7 +69,7 @@
 				</TableView>
 				<TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="1">
 					<tabs>
-						<Tab text="Table Properties">
+						<Tab text="Properties">
 							<content>
 								<TableView fixedCellSize="1.0" prefHeight="200.0" prefWidth="200.0">
 									<columns>
@@ -149,6 +153,9 @@
 					</tabs>
 				</TabPane>
 			</children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </VBox.margin>
 		</GridPane>
 	</children>
 </VBox>
