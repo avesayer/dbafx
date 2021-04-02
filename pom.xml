@@ -12,6 +12,14 @@
 		<maven.compiler.target>11</maven.compiler.target>
 		<!-- <java.version>11</java.version> -->
 	</properties>
+	<repositories>
+		<repository>
+			<!-- DO NOT set id to "local" because it is reserved by Maven -->
+			<id>lib</id>
+			<url>file://lib</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.openjfx</groupId>
@@ -22,6 +30,12 @@
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-fxml</artifactId>
 			<version>11.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>sanchez</groupId>
+			<artifactId>jdbc</artifactId>
+			<version>3.8.6.1</version>
+			<type>jar</type>
 		</dependency>
 	</dependencies>
 	<build>

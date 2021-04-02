@@ -8,16 +8,21 @@ import javafx.stage.Stage;
 
 public class App extends Application
 {
+    private Parent rootNode;
+
     public static void main( String[] args ) {
         launch(args);
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void init() throws Exception {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Main.fxml"));
+        rootNode = fxmlLoader.load();
+    }
 
-        Parent root = FXMLLoader.load(getClass().getResource("/dba.fxml"));
-        primaryStage.setScene(new Scene(root));
-        // primaryStage.setResizable(false);
-        primaryStage.show();
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage.setScene(new Scene(rootNode));
+        stage.show();
     }
 }

@@ -14,7 +14,6 @@ public class SettingsController {
 		
 		Stage stage = (Stage) okButton.getScene().getWindow();
 		
-		// do what you have to do
 		stage.close();
 	}
 }
