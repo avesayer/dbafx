@@ -28,13 +28,13 @@
       <Label text="MTM Port:" GridPane.rowIndex="2" />
       <Label text="Profile User:" GridPane.rowIndex="3" />
       <Label text="Profile Password:" GridPane.rowIndex="4" />
-      <TextField fx:id="name" GridPane.columnIndex="1" />
-      <TextField fx:id="sqlServer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <TextField fx:id="mtmPort" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <TextField fx:id="user" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextField fx:id="name" text="vtbdevnew" GridPane.columnIndex="1" />
+      <TextField fx:id="sqlServer" text="172.29.7.82" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="mtmPort" text="20101" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField fx:id="user" text="1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonAction" prefHeight="25.0" prefWidth="120.0" text="OK" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
       <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-      <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <PasswordField fx:id="password" text="xxx" GridPane.columnIndex="1" GridPane.rowIndex="4" />
    </children>
    <padding>
       <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />

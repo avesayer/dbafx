@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:id="fileTab" prefHeight="700.0" prefWidth="1140.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.msokolov.controller.FileController">
+<VBox fx:id="fileTab" prefHeight="700.0" prefWidth="1140.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.msokolov.controller.FileController">
 	<children>
 		<GridPane prefHeight="41.0" prefWidth="1140.0">
 			<columnConstraints>

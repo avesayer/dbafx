@@ -5,13 +5,15 @@ import javafx.stage.Window;
 
 public class MainController {
 
-	@FXML private MenuBarController menuBarController;
-	@FXML private FileController fileTabController;
-	// @FXML private GlobalController globalTabController;
+	@FXML
+	private MenuBarController menuBarController;
+	
+	@FXML
+	private FileController fileTabController;
 
 	@FXML private void initialize() {
-		fileTabController.injectMainController(this);
 		menuBarController.injectMainController(this);
+		menuBarController.injectFileController(fileTabController);
     }
 
 	public Window getWindow() {

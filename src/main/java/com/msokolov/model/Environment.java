@@ -3,14 +3,14 @@ package com.msokolov.model;
 public class Environment {
 	
 	private String name;
-	private String sqlServer;
+	private String address;
 	private String port;
 	private String user;
 	private String password;
 
-	public Environment(String name, String sqlServer, String port, String user, String password) {
+	public Environment(String name, String address, String port, String user, String password) {
 		this.name = name;
-		this.sqlServer = sqlServer;
+		this.address = address;
 		this.port = port;
 		this.user = user;
 		this.password = password;
@@ -22,11 +22,11 @@ public class Environment {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getSqlServer() {
-		return sqlServer;
+	public String getAddress() {
+		return address;
 	}
-	public void setSqlServer(String sqlServer) {
-		this.sqlServer = sqlServer;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public String getPort() {
 		return port;
@@ -49,7 +49,7 @@ public class Environment {
 
 	@Override
 	public String toString() {
-		return "Environment [name=" + name + ", password=" + password + ", port=" + port + ", sqlServer=" + sqlServer
+		return "Environment [name=" + name + ", password=" + password + ", port=" + port + ", address=" + address
 				+ ", user=" + user + "]";
 	}
 }
